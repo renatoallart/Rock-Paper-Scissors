@@ -4,3 +4,8 @@ function getComputerChoice() {
   if (cpuChoice === 2) return "paper"
   return "scissors"
 }
+
+function getHumanChoice() {
+  const humanChoice = prompt("insert ur Choice")
+  return humanChoice.toLowerCase()
+}
