@@ -49,3 +49,5 @@ function playGame() {
 
   return `U ${humanScore} vs Cpu ${computerScore}, Draws ${draw}`
 }
+
+console.log(playGame())
