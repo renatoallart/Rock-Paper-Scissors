@@ -6,7 +6,7 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  const humanChoice = prompt("insert ur Choice")
+  const humanChoice = prompt("enter with ur Choice")
   return humanChoice.toLowerCase()
 }
 
