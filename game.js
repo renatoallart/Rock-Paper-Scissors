@@ -10,57 +10,42 @@ function getHumanChoice() {
   return humanChoice.toLowerCase()
 }
 
-function playRound(humanChoice, computerChoice) {
-  if (humanChoice === computerChoice) return (draw += 1)
-  if (humanChoice === "rock" && computerChoice === "paper") {
-    computerScore += 1
-    return "U Lose"
+function playGame() {
+  let humanScore = 0
+  let computerScore = 0
+  let draw = 0
+
+  function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) return (draw += 1)
+    if (humanChoice === "rock" && computerChoice === "paper") {
+      computerScore += 1
+      return "U Lose"
+    }
+    if (humanChoice === "rock" && computerChoice === "scissors") {
+      humanScore += 1
+      return "U win"
+    }
+    if (humanChoice === "paper" && computerChoice === "scissors") {
+      computerScore += 1
+      return "U Lose"
+    }
+    if (humanChoice === "paper" && computerChoice === "rock") {
+      humanScore += 1
+      return "U win"
+    }
+    if (humanChoice === "scissors" && computerChoice === "rock") {
+      computerScore += 1
+      return "U Lose"
+    }
+    if (humanChoice === "scissors" && computerChoice === "paper") {
+      humanScore += 1
+      return "U win"
+    }
   }
-  if (humanChoice === "rock" && computerChoice === "scissors") {
-    humanScore += 1
-    return "U win"
+
+  for (let index = 0; index <= 4; index++) {
+    playRound(getHumanChoice(), getComputerChoice())
   }
-  if (humanChoice === "paper" && computerChoice === "scissors") {
-    computerScore += 1
-    return "U Lose"
-  }
-  if (humanChoice === "paper" && computerChoice === "rock") {
-    humanScore += 1
-    return "U win"
-  }
-  if (humanChoice === "scissors" && computerChoice === "rock") {
-    computerScore += 1
-    return "U Lose"
-  }
-  if (humanChoice === "scissors" && computerChoice === "paper") {
-    humanScore += 1
-    return "U win"
-  }
-}
-function playRound(humanChoice, computerChoice) {
-  if (humanChoice === computerChoice) return (draw += 1)
-  if (humanChoice === "rock" && computerChoice === "paper") {
-    computerScore += 1
-    return "U Lose"
-  }
-  if (humanChoice === "rock" && computerChoice === "scissors") {
-    humanScore += 1
-    return "U win"
-  }
-  if (humanChoice === "paper" && computerChoice === "scissors") {
-    computerScore += 1
-    return "U Lose"
-  }
-  if (humanChoice === "paper" && computerChoice === "rock") {
-    humanScore += 1
-    return "U win"
-  }
-  if (humanChoice === "scissors" && computerChoice === "rock") {
-    computerScore += 1
-    return "U Lose"
-  }
-  if (humanChoice === "scissors" && computerChoice === "paper") {
-    humanScore += 1
-    return "U win"
-  }
+
+  return `U ${humanScore} vs Cpu ${computerScore}, Draws ${draw}`
 }
