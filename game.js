@@ -62,13 +62,3 @@ function playRound(humanChoice, computerChoice) {
     return "U win"
   }
 }
-// function playGame(humanChoice) {
-//   let cpuChoice = getComputerChoice()
-//   playGame(humanChoice, cpuChoice)
-
-//   // for (let index = 0; index <= 4; index++) {
-//   //   playRound(getHumanChoice(), getComputerChoice())
-//   // }
-
-//   return `U ${humanScore} vs Cpu ${computerScore}, Draws ${draw}`
-// }
